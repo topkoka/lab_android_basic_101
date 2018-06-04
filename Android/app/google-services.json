@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "560158522379",
+    "firebase_url": "https://empirical-realm-188101.firebaseio.com",
+    "project_id": "empirical-realm-188101",
+    "storage_bucket": "empirical-realm-188101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560158522379:android:a1cfef038adfb7e0",
+        "android_client_info": {
+          "package_name": "com.aditep.ex_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560158522379-oncc81c4v8has0erj56vkjj81lpbu0qk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "560158522379-oncc81c4v8has0erj56vkjj81lpbu0qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6yQoAqltnpUprA19MNJwcYHkxITtWKLo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
