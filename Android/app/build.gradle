@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.inthecheesefactory.thecheeselibrary:adjustable-imageview:1.0.1'
     implementation 'com.google.firebase:firebase-core:16.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'

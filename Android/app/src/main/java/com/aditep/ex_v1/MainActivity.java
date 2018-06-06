@@ -74,12 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == btncalulate) {
 
-            DatabaseReference mRootRef;
-            mRootRef = FirebaseDatabase.getInstance().getReference();
-            DatabaseReference mUsersRef = mRootRef.child("users");
-            DatabaseReference mMessagesRef = mRootRef.child("messages");
 
-            mUsersRef.child("id-1234").setValue("Aditep");
+
+
             int val1 = 0, val2 = 0, sum = 0;
 
             try {
