@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="@drawable/btn_default_normal"
+            android:background="@drawable/selector_btn_default"
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 
