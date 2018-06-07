@@ -1,56 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/logo"
-        />
-
-
-    <TextView
-        android:id="@+id/text_by"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="4dp"
-        android:text="@string/by_continuing_you_accept_the_term_of_use_and_privacy_policy"
-        android:textSize="13.7sp"
-        android:textColor="@color/white"/>
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
 
-    <TextView
-        android:id="@+id/text_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/text_by"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="16dp"
-        android:text="@string/skip"
-        android:textSize="13.7sp"
-        android:textColor="@color/white"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/text_skip"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:background="@drawable/selector_btn"
-        android:padding="16dp"
-        android:text="@string/get_started"
-        android:textColor="@color/white" />
-
-    <TextView
-        android:id="@+id/text_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/welcome_to_clipzy"
-        android:textColor="@color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/logo" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/welcome_to_clipzy"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/clip_anything_from_over"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/_100_00_hot_topics"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/btn_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/selector_btn"
+            android:padding="16dp"
+            android:text="@string/get_started"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/text_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/skip"
+            android:textColor="@color/white"
+            android:textSize="13.7sp" />
+
+        <TextView
+            android:id="@+id/text_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:text="@string/by_continuing_you_accept_the_term_of_use_and_privacy_policy"
+            android:textColor="@color/white"
+            android:textSize="13.5sp" />
+
+
+    </LinearLayout>
 </RelativeLayout>
