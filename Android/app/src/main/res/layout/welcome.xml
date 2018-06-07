@@ -85,6 +85,7 @@
             android:id="@+id/text_by"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:layout_margin="4dp"
             android:text="@string/by_continuing_you_accept_the_term_of_use_and_privacy_policy"
