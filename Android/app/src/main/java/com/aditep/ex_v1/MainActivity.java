@@ -14,9 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvResult, tv1;
     EditText editText1;
@@ -76,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-
+            setContentView(R.layout.welcome);
             int val1 = 0, val2 = 0, sum = 0;
 
             try {
