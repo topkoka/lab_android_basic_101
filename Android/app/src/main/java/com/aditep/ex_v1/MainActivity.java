@@ -1,5 +1,6 @@
 package com.aditep.ex_v1;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -20,9 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editText2;
     Button btncalulate;
     RadioGroup rdGroup;
-
-
-
+    CustomViewGroup viewGroup1;
+    CustomViewGroup viewGroup2;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Menu Setting ok", Toast.LENGTH_SHORT).show();
             return true;
         }
-        return  super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -62,8 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editText2 = (EditText) findViewById(R.id.editText2);
         btncalulate = (Button) findViewById(R.id.btncalulate);
         rdGroup = (RadioGroup) findViewById(R.id.rdGroup);
-
         btncalulate.setOnClickListener(this);
+
+        viewGroup1 = (CustomViewGroup) findViewById(R.id.viewGroup1);
+        viewGroup2 = (CustomViewGroup) findViewById(R.id.viewGroup2);
+
+        viewGroup1.setButtonText("Hello");
+        viewGroup2.setButtonText("World");
     }
 
 
@@ -71,9 +77,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == btncalulate) {
 
-
-
-            setContentView(R.layout.welcome);
             int val1 = 0, val2 = 0, sum = 0;
 
             try {
@@ -106,7 +109,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvResult.setText(sum + "");
             Log.d("Calcuation", "Result = " + sum);
             Toast.makeText(MainActivity.this, "Result = " + sum, Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("result", sum);
+
+            // Playground
+            Coordinate c1 = new Coordinate();
+            c1.x = 5;
+            c1.y = 10;
+            c1.z = 20;
+            Bundle bundle = new Bundle();
+            bundle.putInt("x", c1.x);
+            bundle.putInt("y", c1.y);
+            bundle.putInt("z", c1.z);
+            intent.putExtra("cBundle", bundle);
+
+            // Serializable Lab
+            CoordinateSerializable c2 = new CoordinateSerializable();
+            c2.x = 5;
+            c2.y = 10;
+            c2.z = 20;
+            intent.putExtra("cSerializable", c2);
+
+            CoordinateParcelable c3 = new CoordinateParcelable();
+            c3.x = 5;
+            c3.y = 10;
+            c3.z = 20;
+            intent.putExtra("cParcelable", c3);
+
+           // startActivities(new Intent[]{intent});
         }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save thing(s) here
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore thing(s) here
 
     }
 }
