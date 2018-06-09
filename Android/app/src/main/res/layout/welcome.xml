@@ -9,87 +9,101 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg" />
 
-    <LinearLayout
+    <ScrollView
+        android:fillViewport="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
-        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:background="@drawable/logo" />
-
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+
+            <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/logo" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_welcome"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/welcome_to_clipzy"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/clip_anything_from_over"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/_100_00_hot_topics"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/btn_get"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="vertical">
+                android:layout_margin="20dp"
+                android:background="@drawable/selector_btn"
+                android:padding="16dp"
+                android:text="@string/get_started"
+                android:textColor="@color/white" />
 
-                <TextView
-                    android:id="@+id/text_welcome"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/welcome_to_clipzy"
-                    android:textColor="@color/white"
-                    android:textSize="30dp" />
+            <TextView
+                android:id="@+id/text_skip"
+                style="@style/TextViewStyle.Green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:text="@string/skip" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/clip_anything_from_over"
-                    android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/text_by"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                android:gravity="center_horizontal"
+                android:text="@string/by_continuing_you_accept_the_term_of_use_and_privacy_policy" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/_100_00_hot_topics"
-                    android:textColor="@color/white" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
 
-
-            </LinearLayout>
-
-        </FrameLayout>
-
-
-        <Button
-            android:id="@+id/btn_get"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@drawable/selector_btn"
-            android:padding="16dp"
-            android:text="@string/get_started"
-            android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/text_skip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="16dp"
-            android:text="@string/skip"
-            style="@style/TextViewStyle.Green" />
-
-        <TextView
-            android:id="@+id/text_by"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:layout_margin="4dp"
-            android:text="@string/by_continuing_you_accept_the_term_of_use_and_privacy_policy"
-            style="@style/TextViewStyle" />
-
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

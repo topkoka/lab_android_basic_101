@@ -1,8 +1,10 @@
 package com.aditep.ex_v1;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getResources().getBoolean(R.bool.portrait_only)) {
+            // Fix screen orientation to Portrait
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+
         setContentView(R.layout.activity_main);
         initInstances();
 
@@ -72,6 +80,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewGroup2.setButtonText("World");
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Check if it is a result from SecondActivity
+
+        if (requestCode == 12345) {
+            if (resultCode == RESULT_OK) {
+                // Get data from data's extra
+                String result = data.getStringExtra("result");
+                Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+            }
+
+        }
+    }
 
     @Override
     public void onClick(View v) {
@@ -137,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c3.z = 20;
             intent.putExtra("cParcelable", c3);
 
-           // startActivities(new Intent[]{intent});
+            startActivityForResult(intent, 12345);
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
         }
 
     }
@@ -167,6 +190,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onSaveInstanceState(outState);
         // Save thing(s) here
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 
     @Override
